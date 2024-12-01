@@ -3,7 +3,7 @@ const { Schema } = mongoose;
 
 const orderSchema = new Schema({
     orderId: { type: String, required: true, unique: true },
-    staffId: { type: mongoose.Schema.Types.ObjectId, ref: 'User', required: true },
+    userId: { type: mongoose.Schema.Types.ObjectId, ref: 'User', required: true },
     supplierId: { type: mongoose.Schema.Types.ObjectId, ref: 'Supplier', required: true },
     orderDate: { type: Date, required: true },
     totalAmount: { type: Number, required: true },
