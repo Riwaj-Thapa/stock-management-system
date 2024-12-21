@@ -1,16 +1,16 @@
 import mongoose from 'mongoose'
-const { Schema } = mongoose;
 
-const orderSchema = new Schema({
-    orderId: { type: String, required: true, unique: true },
-    userId: { type: mongoose.Schema.Types.ObjectId, ref: 'User', required: true },
-    supplierId: { type: mongoose.Schema.Types.ObjectId, ref: 'Supplier', required: true },
-    orderDate: { type: Date, required: true },
-    totalAmount: { type: Number, required: true },
-    orderStatus: { type: String, enum: ['Pending', 'Completed', 'Shipped', 'Cancelled'], required: true },
-    createdAt: { type: Date, default: Date.now },
-    updatedAt: { type: Date, default: Date.now }
-  });
+const ordersSchema = new mongoose.Schema({
+  id: { type: String, required: true, unique: true },
+  date: { type: Date, required: true },
+  orderStatus: { type: String, default: 'Pending' },
+  paymentMethod: { type: String, default: 'Cash' },
+  amount: { type: String, required: true },
+  transactionId: { type: String, default: null },
+  createdAt: { type: Date, required: true },
+  updatedAt: { type: Date, required: true },
+  staffId: { type: String, required: true, ref: 'User' },
+});
   
   const Order = mongoose.model('Order', orderSchema);
 

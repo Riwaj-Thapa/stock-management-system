@@ -1,7 +1,6 @@
-import mongoose from 'mongoose'
-const { Schema } = mongoose;
+import mongoose from 'mongoose';
 
-const userSchema = new Schema({
+const userSchema = new mongoose.Schema({
   username: { type: String, required: true, unique: true },
   password: { type: String, required: true },
   role: { type: String, enum: ['Admin', 'Employee'], required: true, default:'Employee' },

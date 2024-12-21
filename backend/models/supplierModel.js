@@ -1,14 +1,18 @@
 import mongoose from 'mongoose'
-const { Schema } = mongoose;
 
-const supplierSchema = new Schema({
-    supplierName: { type: String, required: true },
-    contactEmail: { type: String, required: true },
-    contactPhone: { type: String, required: true },
-    address: { type: String, required: true },
-    createdAt: { type: Date, default: Date.now },
-    updatedAt: { type: Date, default: Date.now }
-  });
+const supplierSchema = new mongoose.Schema({
+  id: { type: String, required: true, unique: true },
+  name: { type: String, required: true },
+  email: { type: String, required: true, unique: true },
+  phoneNumber: { type: String, required: true },
+  profilePictureUrl: { type: String, default: null },
+  dateOfBirth: { type: Date, required: true },
+  gender: { type: String, required: true },
+  address: { type: String, required: true },
+  status: { type: Boolean, default: true },
+  createdAt: { type: Date, required: true },
+  updatedAt: { type: Date, required: true },
+});
 
 const Supplier = mongoose.model('Supplier', supplierSchema);
 
