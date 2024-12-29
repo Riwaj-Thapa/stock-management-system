@@ -12,6 +12,6 @@ const ordersSchema = new mongoose.Schema({
   staffId: { type: String, required: true, ref: 'User' },
 });
   
-  const Order = mongoose.model('Order', orderSchema);
+  const Order = mongoose.model('Order', ordersSchema);
 
   export default Order;
