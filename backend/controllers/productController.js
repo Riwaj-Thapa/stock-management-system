@@ -19,9 +19,9 @@ const addProduct = async(req,res)=>{
             });
             console.log(`Product added: ${productModel}`)
             res.status(200).json({ message:"Product has been added"})
-                
-
         };
+
+
 
 
 export {addProduct};

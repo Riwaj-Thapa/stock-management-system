@@ -20,8 +20,6 @@ app.use('/api/users', userRoutes);
 app.use('/api/products', productRoutes);
 
 
-
-
 app.listen(port,()=>{
     console.log("Server is running in the port "+ port)
 })
