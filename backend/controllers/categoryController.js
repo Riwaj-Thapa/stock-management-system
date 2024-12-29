@@ -28,7 +28,7 @@ const editCategory = async (req, res) => {
         const updatedCategory = await Category.findByIdAndUpdate(
             id,
             { name, status },
-            { new: true, runValidators: true } // Return the updated document and run validators
+            { new: true, runValidators: true } 
         );
 
         if (!updatedCategory) {
